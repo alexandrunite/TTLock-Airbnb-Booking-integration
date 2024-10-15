@@ -4,6 +4,32 @@ import time
 import random
 import string
 from datetime import datetime, timedelta
+from icalendar import Calendar, Event
+import pytz
+import os
+
+
+def fetch_ical(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        print(f"am tras cu succes datele din iCal")
+        return reponse.text
+    expect:
+        print(f"Error fetching the data")
+        return None
+
+def parse_ical(ical_string):
+    try:
+        cal = Calendar.from_ical(ical_string)
+        print("parsed")
+        return cal
+    except Exception as e:
+        print("eroare la parsare: {e}")
+        return None
+
+def inspect_events(cal):
+    
 
 # TT Lock Developer Credentials (Replace with your actual credentials)
 CLIENT_ID = ''
@@ -62,7 +88,6 @@ def generate_random_pin(length=6):
     return ''.join(random.choices(string.digits, k=length))
 
 def add_pin_code(access_token, lock_id, pin_code, start_date, end_date):
-    # Include /v3 in the base URL for other API calls
     api_v3_url = f'{BASE_URL}/v3/keyboardPwd/add'
     timestamp = int(time.time() * 1000)
 
@@ -99,30 +124,22 @@ def add_pin_code(access_token, lock_id, pin_code, start_date, end_date):
         raise Exception("Failed to parse response as JSON.")
 
     if 'errcode' in data:
-        # An error occurred
         print(f"Failed to add PIN code: {data}")
         raise Exception(f"Failed to add PIN code: {data}")
     else:
-        # Success
         print(f"Successfully added PIN code {pin_code} to lock {lock_id}")
         print(f"Response Data: {data}")
 
 def main():
-    # Step 1: Get Access Token
     access_token = get_access_token()
 
-    # Step 2: Generate Random PIN Code
     pin_code = generate_random_pin(length=6)
 
-    # Step 3: Define Validity Period
-    # For example, valid from now to 1 day later
     start_date = datetime.now()
     end_date = start_date + timedelta(days=1)
 
-    # Step 4: Add PIN Code to Lock
-    add_pin_code(access_token, LOCK_ID, pin_code, start_date, end_date)
+    # add_pin_code(access_token, LOCK_ID, pin_code, start_date, end_date)
 
-    # Optional: Output the PIN code
     print(f"Generated PIN Code: {pin_code}")
     print(f"Valid From: {start_date}")
     print(f"Valid Until: {end_date}")
