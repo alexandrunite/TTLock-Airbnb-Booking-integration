@@ -9,28 +9,6 @@ import pytz
 import os
 
 
-def fetch_ical(url):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        print(f"am tras cu succes datele din iCal")
-        return reponse.text
-    expect:
-        print(f"Error fetching the data")
-        return None
-
-def parse_ical(ical_string):
-    try:
-        cal = Calendar.from_ical(ical_string)
-        print("parsed")
-        return cal
-    except Exception as e:
-        print("eroare la parsare: {e}")
-        return None
-
-def inspect_events(cal):
-    
-
 # TT Lock Developer Credentials (Replace with your actual credentials)
 CLIENT_ID = ''
 CLIENT_SECRET = ''
