@@ -137,7 +137,7 @@ This project is licensed under the MIT License.
 
 ## 🌐 Connect with Me
 
-- **GitHub**: [@yourusername](https://github.com/alexandrunite)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/alexandru-nite/)
+- **GitHub**: [@alexandrunite](https://github.com/alexandrunite)
+- **LinkedIn**: [Alexandru Nite](https://www.linkedin.com/in/alexandru-nite/)
 
 **Thank you for visiting my project! 😊 Let me know if you have any questions or feedback.**
