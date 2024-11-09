@@ -1,108 +1,143 @@
-# 🏠 TTLock Airbnb Booking Integration 🏠
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-brightgreen.svg)](https://www.python.org/downloads/release/python-390/)
-
-Welcome to the **TTLock Airbnb Booking Integration** project! 🎉 This solution automates key management for Airbnb and Booking.com properties, making it ideal for HR and administrative teams in property management firms looking to enhance security, streamline processes, and provide a seamless experience for guests.
-
-## ✨ Key Features
-
-- 🔐 **Secure & Unique Access Codes**: Automatically generate time-sensitive access codes unique to each booking, minimizing security risks.
-- ⏳ **Customizable Access Duration**: Codes are active only during the guest's stay, from check-in to check-out.
-- 📬 **Automated Guest Communication**: Sends access details to guests via email or Airbnb messaging, reducing manual work.
-- 🌍 **Multi-Platform Integration**: Works with both Airbnb and Booking.com to simplify access for multiple booking channels.
-- 📈 **Efficient Workflow**: Automates key code generation and delivery, saving valuable administrative time.
-
-## 🚀 Quick Start Guide
-
-### 📋 Prerequisites
-
-- **Python 3.9+**: Install from [Python's official site](https://www.python.org/downloads/)
-- **TTLock Account**: [Register here](https://www.ttlock.com/)
-- **API Access for Airbnb and Booking.com**: Contact Airbnb and Booking.com support to set up developer API access.
-
-### 📦 Installation
-
-1. **Clone this Repository**:
-
-    ```bash
-    git clone https://github.com/alexandrunite/TTLock-Airbnb-Booking-integration.git
-    cd TTLock-Airbnb-Booking-integration
-    ```
-
-2. **Set Up a Virtual Environment**:
-
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
-
-3. **Install the Required Libraries**:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Set Up Environment Variables**:
-
-    Create a `.env` file with your credentials for secure access:
-
-    ```plaintext
-    TTLOCK_CLIENT_ID=your_ttlock_client_id
-    TTLOCK_CLIENT_SECRET=your_ttlock_client_secret
-    TTLOCK_USERNAME=your_ttlock_username
-    TTLOCK_PASSWORD=your_ttlock_password
-    AIRBNB_API_KEY=your_airbnb_api_key
-    BOOKING_API_KEY=your_booking_api_key
-    ```
-
-    💡 *Note*: Keep your `.env` file private to ensure sensitive information stays secure.
-
-### ⚙️ Configuration
-
-- Open `config.py` to adjust settings like the duration for access codes, API endpoints, and notification methods.
-
-## 🏃‍♂️ Running the Integration
-
-1. **Start the Service**:
-
-    ```bash
-    python main.py
-    ```
-
-2. **Automated Notifications**: Once running, the integration will automatically send access codes for new bookings directly to the guests.
-
-3. **Track Activity Logs**: View generated access codes and activity in `logs/access.log` for easy auditing.
-
-## 🌐 Workflow Overview
-
-1. **Real-Time Booking Monitoring**: The system constantly checks Airbnb and Booking.com for new reservations.
-2. **Access Code Generation**: Unique pin codes are generated and assigned to each guest booking.
-3. **Automated Messaging**: Codes are delivered to the guest via email or Airbnb messaging, ensuring clear communication.
-4. **Automatic Expiration**: Codes expire after check-out, adding an additional layer of security.
-
-## 🤝 Contributing
-
-We welcome contributions to enhance this integration for more flexible use cases!
-
-1. **Fork the Repo**: Click on the "Fork" button.
-2. **Create a New Branch**: Make your updates in a new branch.
-3. **Submit a Pull Request**: Describe the changes and submit.
-
-## 🛡️ License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## 🎖 Acknowledgments
-
-- [TTLock API Documentation](https://open.ttlock.com/) – for detailed TTLock integration
-- [Airbnb API Documentation](https://www.airbnb.com/api-documentation/) – for booking management
-- [Booking API Documentation](https://developers.booking.com/) – for API integration
-
-## 📞 Support
-
-For questions, open an issue in this repository or reach out to our developer team!
+Here's a polished and engaging `README.md` file for your project:
 
 ---
 
-Happy Hosting and Secure Access Management! 🏆
+# 🏠 Airbnb/Booking.com TTLock Integration System 🛡️
+
+> **An all-in-one solution for managing Airbnb and Booking.com reservations with automated smart lock PIN code generation, guest communication, and invoicing.**
+
+## 🌟 Overview
+
+This project is a Python-based application designed to streamline short-term rental management by integrating with TTLock smart locks. With automatic booking sync, PIN code generation, and invoicing capabilities, this system simplifies check-ins and enhances security. A user-friendly GUI built with Tkinter provides easy control over the entire process.
+
+## 🎯 Key Features
+
+- **🔒 Automated PIN Generation**: Generates unique PIN codes for each booking, ensuring secure guest access via TTLock API.
+- **📅 Booking Sync**: Regularly syncs with Airbnb and Booking.com calendars to fetch and process new bookings.
+- **📧 Email Integration**: Parses booking confirmation emails, extracts guest details, and sends personalized confirmation emails with PIN codes and instructions.
+- **📄 Invoice Generation**: Creates and attaches invoices for each stay based on booking details.
+- **🖥️ Intuitive GUI**: User-friendly control panel with options for manual sync, email checking, viewing bookings, logs, and scheduler control.
+- **📊 Logging & Monitoring**: Centralized logging to monitor activity and catch any issues.
+
+## 🖼️ Screenshots
+
+### Main Dashboard
+![Dashboard](https://user-images.githubusercontent.com/yourusername/dashboard-screenshot.png)
+
+### Bookings View
+![Bookings View](https://user-images.githubusercontent.com/yourusername/bookings-view.png)
+
+## 🛠️ Tech Stack
+
+- **Python**: Core application logic
+- **Tkinter**: GUI for user-friendly control
+- **SQLite**: Database to store booking information
+- **TTLock API**: Smart lock PIN management
+- **iCal**: Parsing bookings from Airbnb/Booking.com
+- **SMTP (Gmail)**: Email sending and receiving
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Python 3.x**
+- **Virtual Environment (Optional but recommended)**
+- Airbnb and Booking.com iCal URLs
+- TTLock API credentials
+- Gmail account for sending emails
+
+### Installation
+
+1. **Clone the Repository**
+
+   
+   git clone https://github.com/yourusername/airbnb-ttlock-integration.git
+   cd airbnb-ttlock-integration
+   
+
+2. **Set Up Environment Variables**
+
+   Create a `.env` file in the root directory with the following content:
+
+   
+   CLIENT_ID=your_client_id
+   CLIENT_SECRET=your_client_secret
+   USERNAME=your_username
+   PASSWORD=your_password
+   BASE_URL=https://euapi.ttlock.com
+   LOCK_ID=your_lock_id
+   AIRBNB_ICAL_URL=https://www.airbnb.com/calendar/ical/your_ical_url.ics
+   SMTP_USERNAME=your_email@gmail.com
+   SMTP_PASSWORD=your_email_password
+   SMTP_SERVER=smtp.gmail.com
+   SMTP_PORT=587
+   PDF_TEMPLATE_PATH=templates/invoice_template.pdf
+   TUTORIAL_LINK=https://yourwebsite.com/tutorial
+   PRICE_PER_NIGHT=100.0
+   LOGGING_LEVEL=INFO
+   LOGGING_FILE=ttlock_integration.log
+   DATABASE_FILE=bookings.db
+   
+
+3. **Install Dependencies**
+
+   
+   pip install -r requirements.txt
+   
+
+4. **Run the Application**
+
+   
+   python main.py
+   
+
+## 🎛️ Features Breakdown
+
+### Sync Bookings
+- Fetches and processes bookings from Airbnb/Booking.com iCal feeds.
+- Generates unique PIN codes for each booking and stores them in the TTLock system.
+
+### Check Emails
+- Parses new emails for guest details, such as name and email, which are then saved for future correspondence.
+- Uses Gmail SMTP for sending booking confirmation emails with invoice and PIN code.
+
+### View Bookings
+- Displays all processed bookings, including check-in/check-out dates, PIN code, and invoice path.
+
+### View Logs
+- Displays real-time application logs for easy monitoring and troubleshooting.
+
+### Scheduler
+- Runs booking sync and email check tasks every 10 minutes, ensuring the system is always up-to-date.
+
+
+## 📝 To-Do List
+
+- [ ] Add SMS notifications for guests (via Twilio).
+- [ ] Enhance error handling with retry logic.
+- [ ] Add multi-language support for guests’ emails.
+
+## 📚 Documentation
+
+### Configuration
+
+All environment-specific configurations are managed through a `.env` file. Ensure you populate it correctly as shown in the installation steps above.
+
+### Logging
+
+Logs are saved to a specified file (`ttlock_integration.log`) for real-time monitoring. You can view these logs directly within the GUI under the "View Logs" tab.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please submit a pull request or open an issue to discuss improvements.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🌐 Connect with Me
+
+- **GitHub**: [@yourusername](https://github.com/alexandrunite)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/alexandru-nite/)
+
+**Thank you for visiting my project! 😊 Let me know if you have any questions or feedback.**
